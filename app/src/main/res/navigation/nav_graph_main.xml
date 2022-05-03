@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/mainFragment">
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hiltapp.ui.mainfragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="com.example.hiltapp.ui.mediafragment.MediaFragment"
+        android:label="SubFragment"
+        tools:layout="@layout/fragment_media">
+        <action
+            android:id="@+id/action_mediaFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+        <action
+            android:id="@+id/action_mediaFragment_to_detailFragment"
+            app:destination="@id/detailFragment" >
+
+            <argument
+                android:name="media"
+                app:argType="com.example.hiltapp.data.entity.Media" />
+            <argument
+                android:name="position"
+                app:argType="integer"
+                android:defaultValue="0" />
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.example.hiltapp.ui.albumfragmnet.AlbumFragment"
+        android:label="AlbumFragment"
+        tools:layout="@layout/fragment_album"/>
+
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.hiltapp.ui.detailfragment.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail"/>
+
+
+</navigation>

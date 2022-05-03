@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HiltApp</string>
+    <string name="setting">세팅</string>
+</resources>
